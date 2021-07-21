@@ -328,7 +328,6 @@ section.works {
   width: 100%;
   height: 100%;
   text-align: center;
-  padding: 100px;
 }
 
 section.works h1.title {
@@ -337,6 +336,40 @@ section.works h1.title {
   font-weight: 800;
   border-bottom: 2px solid #065823;
   display: inline-block;
+}
+
+section.works .carousel {
+  padding: 100px 200px;
+}
+
+section.works .carousel .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+section.works .carousel .swiper-container .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #3cb30d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 300px;
+  margin: 0 30px;
+}
+
+section.works .carousel .swiper-container .swiper-slide .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .cursor {
