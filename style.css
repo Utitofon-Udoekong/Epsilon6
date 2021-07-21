@@ -67,6 +67,11 @@ header .clip nav ul li a {
   color: #fff;
 }
 
+header .clip nav .checkbtn {
+  height: 100%;
+  line-height: 100px;
+}
+
 header .clip .landing {
   padding: 100px;
 }
@@ -200,35 +205,29 @@ main section.target .target-text .business-analysis .column {
   height: 100%;
   padding: 15px 20px;
   text-align: center;
-  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.02), 0 0 10px rgba(0, 0, 0, 0.192);
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.02), 0 0 10px rgba(0, 0, 0, 0.192);
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 20px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: relative;
-}
-
-main section.target .target-text .business-analysis .column::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(rgba(7, 128, 53, 0.418), transparent);
-  z-index: -1;
 }
 
 main section.target .target-text .business-analysis .column img {
   width: 80px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 main section.target .target-text .business-analysis .column p {
   font-size: 14px;
   line-height: 3vh;
   padding-top: 10px;
+  z-index: 1;
 }
 
 main section.target .target-image {
@@ -236,6 +235,8 @@ main section.target .target-image {
 }
 
 main section.target .target-image img {
+  -webkit-animation: bob_up_down 4s ease-in-out infinite;
+          animation: bob_up_down 4s ease-in-out infinite;
   -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
           filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
   width: 450px;
@@ -254,6 +255,8 @@ main section.target .target-image::before {
   height: 10%;
   background: rgba(0, 0, 0, 0.671);
   border-radius: 50%;
+  -webkit-animation: shadow_bop 4s ease-in-out infinite;
+          animation: shadow_bop 4s ease-in-out infinite;
 }
 
 main section.web-services {
@@ -271,8 +274,8 @@ main section.web-services .column {
   height: 100%;
   text-align: center;
   position: relative;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: #fff;
 }
 
@@ -351,7 +354,9 @@ section.works h1.title {
 }
 
 @-webkit-keyframes bob_up_down {
-  0%, 20%, 100% {
+  0%,
+  20%,
+  100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
@@ -362,7 +367,9 @@ section.works h1.title {
 }
 
 @keyframes bob_up_down {
-  0%, 20%, 100% {
+  0%,
+  20%,
+  100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
@@ -373,7 +380,9 @@ section.works h1.title {
 }
 
 @-webkit-keyframes shadow_bop {
-  0%, 20%, 100% {
+  0%,
+  20%,
+  100% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
   }
@@ -384,13 +393,82 @@ section.works h1.title {
 }
 
 @keyframes shadow_bop {
-  0%, 20%, 100% {
+  0%,
+  20%,
+  100% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
   }
   50% {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .clip nav {
+    padding: 0 50px;
+  }
+  header .clip nav ul {
+    display: none;
+  }
+  header .clip .landing {
+    padding: 50px;
+  }
+  main section.services .intro-columns .column {
+    margin: 0 10px;
+  }
+  main section.target {
+    padding: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  main section.target .target-text {
+    width: auto;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header .clip nav {
+    padding: 0 30px;
+  }
+  header .clip .landing {
+    padding: 30px;
+  }
+  header .clip .landing h1 {
+    font-size: 35px;
+  }
+  main section.services .intro-columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.services .intro-columns .column {
+    margin-bottom: 30px;
+  }
+  main section.target .target-text .business-analysis {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  main section.target .target-image img {
+    max-width: 400px;
+  }
+  main section.web-services {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
