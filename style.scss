@@ -36,31 +36,62 @@ header {
     nav {
       width: 100%;
       height: 100px;
-      display: flex;
-      justify-content: space-between;
       padding: 0 100px;
       .logo {
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
         height: $full-height;
-        display: grid;
-        place-items: center;
       }
       ul {
-        display: inline-flex;
-        height: $full-height;
+        float: right;
         li {
+          float: left;
           line-height: 100px;
           list-style: none;
-          margin: 0 10px;
+          &:not(:first-child) {
+            margin-left: 48px;
+          }
+          &:last-child {
+            margin-right: 24px;
+          }
           a {
-            padding: 20px;
             text-decoration: none;
             color: $main-white;
           }
         }
       }
-      .checkbtn {
-        height: $full-height;
-        line-height: 100px;
+      #nav {
+        &:checked + .nav-btn {
+          transform: rotate(45deg);
+        }
+        &:checked + .nav-btn i {
+          background: #000;
+          transition: transform 0.2s ease;
+        }
+        &:checked + .nav-btn i:nth-child(1) {
+          transform: translateY(6px) rotate(180deg);
+        }
+        &:checked + .nav-btn i:nth-child(2) {
+          opacity: 0;
+        }
+        &:checked + .nav-btn i:nth-child(3) {
+          transform: translateY(-6px) rotate(90deg);
+        }
+        &:checked ~ .nav-wrapper {
+          z-index: 9990;
+          opacity: 1;
+          left: 0;
+        }
+        &:checked ~ .nav-wrapper ul li a {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .hidden {
+        display: none;
       }
     }
     .landing {
@@ -172,14 +203,12 @@ main {
           position: relative;
           img {
             width: 80px;
-            z-index: 1;
             transition: 0.3s;
           }
           p {
             font-size: $tiny-font;
             line-height: 3vh;
             padding-top: 10px;
-            z-index: 1;
           }
         }
       }
@@ -187,9 +216,9 @@ main {
     .target-image {
       position: relative;
       img {
-        animation: bob_up_down 4s ease-in-out infinite;
-        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
         width: 450px;
+        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
+        // animation: bob_up_down 4s ease-in-out infinite;
       }
       &::before {
         content: "";
@@ -202,7 +231,7 @@ main {
         height: 10%;
         background: rgba(0, 0, 0, 0.671);
         border-radius: 50%;
-        animation: shadow_bop 4s ease-in-out infinite;
+        // animation: shadow_bop 4s ease-in-out infinite;
       }
     }
   }
@@ -298,12 +327,6 @@ section.works {
   }
 }
 
-
-
-
-
-
-
 .cursor {
   position: absolute;
   width: 30px;
@@ -337,23 +360,96 @@ section.works {
   }
 }
 
-
 // media queries
-@media screen and (max-width: 768px) {
-  *{
-  }
+@media screen and (max-width: 800px) {
   header {
-   .clip {
-    nav {
-      padding: 0 50px;
-      ul {
-        display: none;
+    .clip {
+      nav {
+        padding: 0 50px;
+        .nav-wrapper {
+          position: fixed;
+          top: 0;
+          left: 100%;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          background: #fff;
+          opacity: 0;
+          transition: all 0.2s ease;
+          ul {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            li {
+              display: block;
+              float: none;
+              width: 100%;
+              text-align: right;
+              line-height: 50px;
+              &:nth-child(1) a {
+                transition-delay: 0.3s;
+                
+              }
+              &:nth-child(2) a {
+                transition-delay: 0.4s;
+              }
+              &:nth-child(3) a {
+                transition-delay: 0.5s;
+              }
+              &:nth-child(4) a {
+                transition-delay: 0.6s;
+              }
+              &:not(:first-child) {
+                margin-left: 0;
+              }
+              a {
+                padding: 10px 24px;
+                opacity: 0;
+                color: #000;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 1.2px;
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+        .nav-btn {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          display: block;
+          width: 48px;
+          height: 48px;
+          cursor: pointer;
+          z-index: 9999;
+          border-radius: 50%;
+          i {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            margin-left: 14px;
+            &:nth-child(1) {
+              margin-top: 16px;
+            }
+            &:nth-child(2) {
+              margin-top: 4px;
+              opacity: 1;
+            }
+            &:nth-child(3) {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+      .landing {
+        padding: 50px;
       }
     }
-    .landing {
-      padding: 50px;
-    }
-   }
   }
   main {
     section.services {
@@ -382,10 +478,15 @@ section.works {
       nav {
         padding: 0 30px;
       }
-      .landing{
-        padding: 30px;
+      .landing {
+        padding: 50px 30px;
         h1 {
-          font-size: 35px;
+          font-size: 28px;
+          letter-spacing: 1px;
+          line-height: 45px;
+        }
+        p {
+          font-size: 16px;
         }
       }
     }
@@ -409,13 +510,24 @@ section.works {
       }
       .target-image {
         img {
-          max-width: 400px;
+          max-width: 350px;
         }
       }
     }
     section.web-services {
       flex-direction: column;
       height: 100%;
+      .column {
+        padding: 10px 0;
+        &::before{
+          bottom: 10px;
+        }
+      }
+    }
+    section.works {
+      .carousel {
+        padding: 50px 0;
+      }
     }
   }
 }

@@ -32,44 +32,88 @@ header .clip {
 header .clip nav {
   width: 100%;
   height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding: 0 100px;
 }
 
 header .clip nav .logo {
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
   height: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
 }
 
 header .clip nav ul {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: 100%;
+  float: right;
 }
 
 header .clip nav ul li {
+  float: left;
   line-height: 100px;
   list-style: none;
-  margin: 0 10px;
+}
+
+header .clip nav ul li:not(:first-child) {
+  margin-left: 48px;
+}
+
+header .clip nav ul li:last-child {
+  margin-right: 24px;
 }
 
 header .clip nav ul li a {
-  padding: 20px;
   text-decoration: none;
   color: #fff;
 }
 
-header .clip nav .checkbtn {
-  height: 100%;
-  line-height: 100px;
+header .clip nav #nav:checked + .nav-btn {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .clip nav #nav:checked + .nav-btn i {
+  background: #000;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+header .clip nav #nav:checked + .nav-btn i:nth-child(1) {
+  -webkit-transform: translateY(6px) rotate(180deg);
+          transform: translateY(6px) rotate(180deg);
+}
+
+header .clip nav #nav:checked + .nav-btn i:nth-child(2) {
+  opacity: 0;
+}
+
+header .clip nav #nav:checked + .nav-btn i:nth-child(3) {
+  -webkit-transform: translateY(-6px) rotate(90deg);
+          transform: translateY(-6px) rotate(90deg);
+}
+
+header .clip nav #nav:checked ~ .nav-wrapper {
+  z-index: 9990;
+  opacity: 1;
+  left: 0;
+}
+
+header .clip nav #nav:checked ~ .nav-wrapper ul li a {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header .clip nav .hidden {
+  display: none;
 }
 
 header .clip .landing {
@@ -218,7 +262,6 @@ main section.target .target-text .business-analysis .column {
 
 main section.target .target-text .business-analysis .column img {
   width: 80px;
-  z-index: 1;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -227,7 +270,6 @@ main section.target .target-text .business-analysis .column p {
   font-size: 14px;
   line-height: 3vh;
   padding-top: 10px;
-  z-index: 1;
 }
 
 main section.target .target-image {
@@ -235,11 +277,9 @@ main section.target .target-image {
 }
 
 main section.target .target-image img {
-  -webkit-animation: bob_up_down 4s ease-in-out infinite;
-          animation: bob_up_down 4s ease-in-out infinite;
+  width: 450px;
   -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
           filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
-  width: 450px;
 }
 
 main section.target .target-image::before {
@@ -255,8 +295,6 @@ main section.target .target-image::before {
   height: 10%;
   background: rgba(0, 0, 0, 0.671);
   border-radius: 50%;
-  -webkit-animation: shadow_bop 4s ease-in-out infinite;
-          animation: shadow_bop 4s ease-in-out infinite;
 }
 
 main section.web-services {
@@ -438,12 +476,95 @@ section.works .carousel .swiper-container .swiper-slide .swiper-slide img {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   header .clip nav {
     padding: 0 50px;
   }
-  header .clip nav ul {
-    display: none;
+  header .clip nav .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #fff;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  header .clip nav .nav-wrapper ul {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+  }
+  header .clip nav .nav-wrapper ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    line-height: 50px;
+  }
+  header .clip nav .nav-wrapper ul li:nth-child(1) a {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+  }
+  header .clip nav .nav-wrapper ul li:nth-child(2) a {
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+  }
+  header .clip nav .nav-wrapper ul li:nth-child(3) a {
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+  }
+  header .clip nav .nav-wrapper ul li:nth-child(4) a {
+    -webkit-transition-delay: 0.6s;
+            transition-delay: 0.6s;
+  }
+  header .clip nav .nav-wrapper ul li:not(:first-child) {
+    margin-left: 0;
+  }
+  header .clip nav .nav-wrapper ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  header .clip nav .nav-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+  header .clip nav .nav-btn i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+  header .clip nav .nav-btn i:nth-child(1) {
+    margin-top: 16px;
+  }
+  header .clip nav .nav-btn i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+  header .clip nav .nav-btn i:nth-child(3) {
+    margin-top: 4px;
   }
   header .clip .landing {
     padding: 50px;
@@ -471,10 +592,15 @@ section.works .carousel .swiper-container .swiper-slide .swiper-slide img {
     padding: 0 30px;
   }
   header .clip .landing {
-    padding: 30px;
+    padding: 50px 30px;
   }
   header .clip .landing h1 {
-    font-size: 35px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    line-height: 45px;
+  }
+  header .clip .landing p {
+    font-size: 16px;
   }
   main section.services .intro-columns {
     -webkit-box-orient: vertical;
@@ -494,7 +620,7 @@ section.works .carousel .swiper-container .swiper-slide .swiper-slide img {
         grid-template-columns: 1fr;
   }
   main section.target .target-image img {
-    max-width: 400px;
+    max-width: 350px;
   }
   main section.web-services {
     -webkit-box-orient: vertical;
@@ -502,6 +628,15 @@ section.works .carousel .swiper-container .swiper-slide .swiper-slide img {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100%;
+  }
+  main section.web-services .column {
+    padding: 10px 0;
+  }
+  main section.web-services .column::before {
+    bottom: 10px;
+  }
+  main section.works .carousel {
+    padding: 50px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
