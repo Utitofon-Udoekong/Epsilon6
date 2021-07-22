@@ -1,15 +1,19 @@
 const navTags = document.querySelectorAll(".nav-wrapper ul li a");
 const navWrapper = document.querySelector(".nav-wrapper");
-const chechBox = document.getElementById("nav")
+const hamburger = document.querySelector(".nav-btn")
 navTags.forEach(tag => {
     tag.addEventListener("click", () => {
-        console.log(chechBox)
+        navWrapper.classList.remove("active");
+        hamburger.classList.remove("active")
     })
 })
-console.log(navTags);
-console.log(chechBox)
-const nam = -1
-console.log(Number.isInteger(nam))
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active")
+    navWrapper.classList.toggle("active");
+})
+
+
 
 
 // const cursor = document.querySelector(".cursor")

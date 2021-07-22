@@ -50,6 +50,18 @@ header .clip nav .logo {
   height: 100%;
 }
 
+header .clip nav .nav-wrapper.active {
+  z-index: 9990;
+  opacity: 1;
+  left: 0;
+}
+
+header .clip nav .nav-wrapper.active ul li a {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 header .clip nav ul {
   float: right;
 }
@@ -73,12 +85,12 @@ header .clip nav ul li a {
   color: #fff;
 }
 
-header .clip nav #nav:checked + .nav-btn {
+header .clip nav .nav-btn.active {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-header .clip nav #nav:checked + .nav-btn i {
+header .clip nav .nav-btn.active i {
   background: #000;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
@@ -86,34 +98,18 @@ header .clip nav #nav:checked + .nav-btn i {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-header .clip nav #nav:checked + .nav-btn i:nth-child(1) {
+header .clip nav .nav-btn.active i:nth-child(1) {
   -webkit-transform: translateY(6px) rotate(180deg);
           transform: translateY(6px) rotate(180deg);
 }
 
-header .clip nav #nav:checked + .nav-btn i:nth-child(2) {
+header .clip nav .nav-btn.active i:nth-child(2) {
   opacity: 0;
 }
 
-header .clip nav #nav:checked + .nav-btn i:nth-child(3) {
+header .clip nav .nav-btn.active i:nth-child(3) {
   -webkit-transform: translateY(-6px) rotate(90deg);
           transform: translateY(-6px) rotate(90deg);
-}
-
-header .clip nav #nav:checked ~ .nav-wrapper {
-  z-index: 9990;
-  opacity: 1;
-  left: 0;
-}
-
-header .clip nav #nav:checked ~ .nav-wrapper ul li a {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-header .clip nav .hidden {
-  display: none;
 }
 
 header .clip .landing {

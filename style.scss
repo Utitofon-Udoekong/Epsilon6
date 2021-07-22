@@ -45,6 +45,15 @@ header {
         width: auto;
         height: $full-height;
       }
+      .nav-wrapper.active {
+        z-index: 9990;
+        opacity: 1;
+        left: 0;
+        ul li a {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
       ul {
         float: right;
         li {
@@ -63,35 +72,21 @@ header {
           }
         }
       }
-      #nav {
-        &:checked + .nav-btn {
-          transform: rotate(45deg);
-        }
-        &:checked + .nav-btn i {
+      .nav-btn.active {
+        transform: rotate(45deg);
+        i {
           background: #000;
           transition: transform 0.2s ease;
+          &:nth-child(1) {
+            transform: translateY(6px) rotate(180deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-6px) rotate(90deg);
+          }
         }
-        &:checked + .nav-btn i:nth-child(1) {
-          transform: translateY(6px) rotate(180deg);
-        }
-        &:checked + .nav-btn i:nth-child(2) {
-          opacity: 0;
-        }
-        &:checked + .nav-btn i:nth-child(3) {
-          transform: translateY(-6px) rotate(90deg);
-        }
-        &:checked ~ .nav-wrapper {
-          z-index: 9990;
-          opacity: 1;
-          left: 0;
-        }
-        &:checked ~ .nav-wrapper ul li a {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      .hidden {
-        display: none;
       }
     }
     .landing {
