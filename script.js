@@ -24,7 +24,6 @@ hamburger.addEventListener("click", () => {
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
-    // spaceBetween: 50,
     centeredSlides: true,
     pagination: {
         el: ".swiper-pagination",
