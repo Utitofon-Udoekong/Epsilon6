@@ -7,6 +7,14 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --heading-font: 40px;
+  --title-font: 30px;
+  --text-font: 20px;
+  --small-font: 18px;
+  --tiny-font: 14px;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -125,13 +133,13 @@ header .clip .landing {
 }
 
 header .clip .landing p {
-  font-size: 18px;
+  font-size: var(--small-font);
   padding-bottom: 10px;
   letter-spacing: 1.5px;
 }
 
 header .clip .landing h1 {
-  font-size: 50px;
+  font-size: calc(var(--heading-font) + 10px);
   letter-spacing: 2px;
   line-height: 10vh;
 }
@@ -172,18 +180,63 @@ main section.services .intro-columns .column img {
 }
 
 main section.services .intro-columns .column h1 {
-  font-size: 18px;
+  font-size: var(--small-font);
   padding-bottom: 5px;
 }
 
 main section.services .intro-columns .column p {
-  font-size: 14px;
+  font-size: var(--tiny-font);
+  line-height: 3vh;
+}
+
+main section.services .carousel {
+  padding: 100px 200px;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+main section.services .carousel .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+main section.services .carousel .swiper-container .swiper-slide {
+  width: 250px;
+  height: 300px;
+  margin: 0 30px;
+}
+
+main section.services .carousel .swiper-container .swiper-slide .column {
+  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  padding: 27px;
+  text-align: center;
+  background: #fff;
+}
+
+main section.services .carousel .swiper-container .swiper-slide .column img {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+main section.services .carousel .swiper-container .swiper-slide .column h1 {
+  font-size: var(--small-font);
+  padding-bottom: 5px;
+}
+
+main section.services .carousel .swiper-container .swiper-slide .column p {
+  font-size: var(--tiny-font);
   line-height: 3vh;
 }
 
 main section.services .what-we-do {
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 main section.services .what-we-do p {
@@ -200,7 +253,7 @@ main section.services .what-we-do p:last-of-type {
 }
 
 main section.services .what-we-do h1 {
-  font-size: 40px;
+  font-size: var(--heading-font);
   font-weight: 800;
   padding-bottom: 5px;
 }
@@ -225,7 +278,7 @@ main section.target .target-text {
 }
 
 main section.target .target-text h1 {
-  font-size: 30px;
+  font-size: var(--title-font);
   font-weight: 600;
   padding-bottom: 10px;
 }
@@ -271,7 +324,7 @@ main section.target .target-text .business-analysis .column img {
 }
 
 main section.target .target-text .business-analysis .column p {
-  font-size: 14px;
+  font-size: var(--tiny-font);
   line-height: 3vh;
   padding-top: 10px;
 }
@@ -284,6 +337,8 @@ main section.target .target-image img {
   width: 450px;
   -webkit-filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
           filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.733));
+  -webkit-animation: bob_up_down 4s ease-in-out infinite;
+          animation: bob_up_down 4s ease-in-out infinite;
 }
 
 main section.target .target-image::before {
@@ -299,6 +354,8 @@ main section.target .target-image::before {
   height: 10%;
   background: rgba(0, 0, 0, 0.671);
   border-radius: 50%;
+  -webkit-animation: shadow_bop 4s ease-in-out infinite;
+          animation: shadow_bop 4s ease-in-out infinite;
 }
 
 main section.web-services {
@@ -350,13 +407,13 @@ main section.web-services .column:hover::before {
 }
 
 main section.web-services .column p {
-  font-size: 14px;
+  font-size: var(--tiny-font);
   line-height: 3vh;
   padding-bottom: 20px;
 }
 
 main section.web-services .column h1 {
-  font-size: 20px;
+  font-size: var(--text-font);
   padding-bottom: 20px;
 }
 
@@ -373,7 +430,7 @@ section.works {
 }
 
 section.works h1.title {
-  font-size: 30px;
+  font-size: var(--title-font);
   color: #065823;
   font-weight: 800;
   border-bottom: 2px solid #065823;
@@ -391,7 +448,7 @@ section.works .carousel .swiper-container {
 
 section.works .carousel .swiper-container .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: var(--small-font);
   background: #3cb30d;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,7 +487,7 @@ section.agency .title {
 }
 
 section.agency .title h1 {
-  font-size: 30px;
+  font-size: var(--title-font);
   font-weight: 700;
   position: relative;
   padding-left: 10px;
@@ -444,7 +501,7 @@ section.agency .title hr {
 
 section.agency p {
   color: #065823;
-  font-size: 18px;
+  font-size: var(--small-font);
 }
 
 section.agency .workspaces {
@@ -542,12 +599,12 @@ section.agency .workspaces .column .content {
 }
 
 section.agency .workspaces .column .content h1 {
-  font-size: 20px;
+  font-size: var(--text-font);
   color: #fff;
 }
 
 section.agency .workspaces .column .content p {
-  font-size: 14px;
+  font-size: var(--tiny-font);
   color: #fff;
 }
 
@@ -583,13 +640,13 @@ section.who-we-are .column::before {
 }
 
 section.who-we-are .column h1 {
-  font-size: 30px;
+  font-size: var(--title-font);
   font-weight: 600;
   padding-bottom: 10px;
 }
 
 section.who-we-are .column p {
-  font-size: 18px;
+  font-size: var(--small-font);
   font-weight: 100;
   color: #757575;
   font-stretch: condensed;
@@ -611,7 +668,7 @@ section.testimonials .title {
 }
 
 section.testimonials .title h1 {
-  font-size: 30px;
+  font-size: var(--title-font);
   font-weight: 700;
   position: relative;
   padding-left: 10px;
@@ -625,7 +682,7 @@ section.testimonials .title hr {
 
 section.testimonials p {
   color: #065823;
-  font-size: 18px;
+  font-size: var(--small-font);
 }
 
 .cursor {
@@ -644,7 +701,6 @@ section.testimonials p {
 
 @-webkit-keyframes bob_up_down {
   0%,
-  20%,
   100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -657,7 +713,6 @@ section.testimonials p {
 
 @keyframes bob_up_down {
   0%,
-  20%,
   100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -670,7 +725,6 @@ section.testimonials p {
 
 @-webkit-keyframes shadow_bop {
   0%,
-  20%,
   100% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -683,7 +737,6 @@ section.testimonials p {
 
 @keyframes shadow_bop {
   0%,
-  20%,
   100% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5);
@@ -790,6 +843,9 @@ section.testimonials p {
   main section.services .intro-columns .column {
     margin: 0 10px;
   }
+  main section.services .carousel .column {
+    margin: 0 10px;
+  }
   main section.target {
     padding: 50px;
     -webkit-box-orient: vertical;
@@ -823,32 +879,35 @@ section.testimonials p {
 }
 
 @media screen and (max-width: 425px) {
+  :root {
+    --heading-font: 30px;
+    --title-font: 20px;
+    --text-font: 18px;
+    --small-font: 16px;
+    --tiny-font: 14px;
+  }
   header .clip nav {
-    padding: 0 30px;
+    padding: 0 20px;
+  }
+  header .clip nav .nav-btn {
+    top: 20px;
   }
   header .clip .landing {
-    padding: 50px 30px;
+    padding: 50px 20px;
   }
   header .clip .landing h1 {
-    font-size: 28px;
+    font-size: var(--heading-font);
     letter-spacing: 1px;
     line-height: 45px;
   }
-  header .clip .landing p {
-    font-size: 16px;
-  }
   main section.services .intro-columns {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: none;
   }
-  main section.services .intro-columns .column {
-    margin-bottom: 30px;
+  main section.services .carousel {
+    display: unset;
+    padding: 50px 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
   }
   main section.target .target-text .business-analysis {
     -ms-grid-columns: 1fr;
@@ -924,13 +983,48 @@ section.testimonials p {
     margin-bottom: 30px;
   }
   main section.who-we-are .column h1 {
-    font-size: 18px;
+    font-size: var(--small-font);
   }
   main section.who-we-are .column p {
-    font-size: 14px;
+    font-size: var(--tiny-font);
   }
   main section.testimonials {
     padding: 30px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  main section.agency .workspaces {
+    -ms-grid-columns: 300px;
+        grid-template-columns: 300px;
+  }
+  main section.agency .workspaces .content {
+    left: 25px;
+  }
+  main section.target .target-image img {
+    max-width: 300px;
+  }
+  @-webkit-keyframes bob_up_down {
+    0%,
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  @keyframes bob_up_down {
+    0%,
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
   }
 }
 /*# sourceMappingURL=style.css.map */
