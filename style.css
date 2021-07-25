@@ -205,17 +205,28 @@ main section.services .carousel .swiper-container .swiper-slide {
   width: 250px;
   height: 300px;
   margin: 0 30px;
+  background: #bde0c1c5;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+main section.services .carousel .swiper-container .swiper-slide.swiper-slide-active {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  background: #fff;
 }
 
 main section.services .carousel .swiper-container .swiper-slide .column {
-  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
-          box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
   border-radius: 15px;
   height: 100%;
   width: 100%;
   padding: 27px;
   text-align: center;
-  background: #fff;
 }
 
 main section.services .carousel .swiper-container .swiper-slide .column img {
@@ -722,6 +733,8 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
   -webkit-filter: blur(4px);
           filter: blur(4px);
   border-radius: 10px;
+  -webkit-transition: background .3s;
+  transition: background .3s;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide.swiper-slide-active {
@@ -878,10 +891,10 @@ main section.contact .container button {
   background: transparent;
   border: 2px solid green;
   outline: none;
-  -webkit-transition: background .3s, -webkit-box-shadow .36s;
-  transition: background .3s, -webkit-box-shadow .36s;
-  transition: background .3s, box-shadow .36s;
-  transition: background .3s, box-shadow .36s, -webkit-box-shadow .36s;
+  -webkit-transition: background 0.3s, -webkit-box-shadow 0.36s;
+  transition: background 0.3s, -webkit-box-shadow 0.36s;
+  transition: background 0.3s, box-shadow 0.36s;
+  transition: background 0.3s, box-shadow 0.36s, -webkit-box-shadow 0.36s;
 }
 
 main section.contact .container button:hover {
@@ -950,8 +963,8 @@ footer .container .row .column ul li a {
   color: #bbb;
   font-size: var(--tiny-font);
   text-decoration: none;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 footer .container .row .column ul li a:hover {
