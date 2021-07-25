@@ -438,20 +438,24 @@ main section.works h1.title {
 }
 
 main section.works .carousel {
-  padding: 50px 200px;
+  padding: 50px;
 }
 
 main section.works .carousel .swiper-container {
   width: 100%;
-  height: 100%;
   padding: 50px 0;
 }
 
 main section.works .carousel .swiper-container .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 320px;
-  background: #065823;
+  width: 300px;
+  height: 300px;
+}
+
+main section.works .carousel .swiper-container .swiper-slide img {
+  display: block;
+  width: 100%;
 }
 
 main section.agency {
@@ -672,7 +676,7 @@ main section.testimonials p {
 }
 
 main section.testimonials .testifiers .carousel {
-  padding: 50px 200px;
+  padding: 50px;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container {
@@ -712,6 +716,7 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
   top: 20px;
   right: 30px;
   opacity: 0.2;
+  width: 100px;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .content p {
@@ -761,8 +766,12 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
   color: #666;
 }
 
-main section.testimonials .testifiers .carousel .swiper-container .swiper-container-3d .swiper-slide-shadow-left,
-main section.testimonials .testifiers .carousel .swiper-container .swiper-container-3d .swiper-slide-shadow-right {
+main section.testimonials .testifiers .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #065823;
+}
+
+main section.testimonials .testifiers .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-left,
+main section.testimonials .testifiers .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-right {
   background-image: none;
 }
 

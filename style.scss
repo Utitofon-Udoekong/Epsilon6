@@ -345,16 +345,19 @@ main {
       display: inline-block;
     }
     .carousel {
-      padding: 50px 200px;
+      padding: 50px;
       .swiper-container {
         width: 100%;
-        height: 100%;
         padding: 50px 0;
         .swiper-slide {
           background-position: center;
           background-size: cover;
-          width: 320px;
-          background: $main-green;
+          width: 300px;
+          height: 300px;
+          img {
+            display: block;
+            width: 100%;
+          }
         }
       }
     }
@@ -514,7 +517,7 @@ main {
     }
     .testifiers {
       .carousel {
-        padding: 50px 200px;
+        padding: 50px;
         .swiper-container {
           width: 100%;
           height: 100%;
@@ -542,6 +545,7 @@ main {
                 top: 20px;
                 right: 30px;
                 opacity: 0.2;
+                width: 100px;
               }
               .content {
                 p {
@@ -583,8 +587,13 @@ main {
               }
             }
           }
-          .swiper-container-3d .swiper-slide-shadow-left,
-          .swiper-container-3d .swiper-slide-shadow-right {
+          .swiper-pagination {
+            .swiper-pagination-bullet-active {
+              background: $main-green;
+            }
+          }
+          &.swiper-container-3d .swiper-slide-shadow-left,
+          &.swiper-container-3d .swiper-slide-shadow-right {
             background-image: none;
           }
         }
