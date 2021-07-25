@@ -704,6 +704,7 @@ footer {
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      flex-wrap: wrap;
       .column {
         color: $main-white;
         margin-right: 60px;
@@ -718,6 +719,9 @@ footer {
             background: green;
             border: none;
             margin: 10px 0;
+          }
+          p{
+            padding: 0;
           }
         }
         ul {
@@ -963,6 +967,24 @@ footer {
       }
     }
   }
+  footer {
+    padding-bottom: 40px;
+    .container{
+      .row{
+        padding: 50px;
+        justify-content: space-around;
+        .column{
+          margin: 0;
+          margin-bottom: 30px;
+          &:not(:first-child) {
+            width: 300px;
+            margin: 0;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1086,6 +1108,27 @@ footer {
       }
     }
   }
+  footer {
+    .container{
+      .row{
+        padding-top: 40px;
+        padding: 30px;
+        justify-content: unset;
+        .column{
+          margin: 0;
+          margin-bottom: 30px;
+          &:not(:first-child) {
+            width: 300px;
+            margin: 0;
+            margin-bottom: 30px;
+          }
+        }
+      }
+      p{
+        padding-left: 30px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 340px) {
@@ -1102,6 +1145,22 @@ footer {
       .target-image {
         img {
           max-width: 300px;
+        }
+      }
+    }
+    section.testimonials {
+      padding: 30px;
+      .testifiers {
+        .carousel {
+          padding: 0;
+          .swiper-container{
+            .swiper-slide{
+              width: 300px;
+              .testimonial-box{
+                padding: 25px;
+              }
+            }
+          }
         }
       }
     }

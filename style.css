@@ -932,6 +932,8 @@ footer .container .row {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 footer .container .row .column {
@@ -950,6 +952,10 @@ footer .container .row .column:first-child hr {
   background: green;
   border: none;
   margin: 10px 0;
+}
+
+footer .container .row .column:first-child p {
+  padding: 0;
 }
 
 footer .container .row .column ul li {
@@ -1230,6 +1236,23 @@ footer .container P {
     left: 25px;
     padding: 20px;
   }
+  footer {
+    padding-bottom: 40px;
+  }
+  footer .container .row {
+    padding: 50px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  footer .container .row .column {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  footer .container .row .column:not(:first-child) {
+    width: 300px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1352,6 +1375,25 @@ footer .container P {
   main section.testimonials .testifiers .carousel {
     padding: 0;
   }
+  footer .container .row {
+    padding-top: 40px;
+    padding: 30px;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  footer .container .row .column {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  footer .container .row .column:not(:first-child) {
+    width: 300px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  footer .container p {
+    padding-left: 30px;
+  }
 }
 
 @media screen and (max-width: 340px) {
@@ -1364,6 +1406,18 @@ footer .container P {
   }
   main section.target .target-image img {
     max-width: 300px;
+  }
+  main section.testimonials {
+    padding: 30px;
+  }
+  main section.testimonials .testifiers .carousel {
+    padding: 0;
+  }
+  main section.testimonials .testifiers .carousel .swiper-container .swiper-slide {
+    width: 300px;
+  }
+  main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box {
+    padding: 25px;
   }
   @-webkit-keyframes bob_up_down {
     0%,
