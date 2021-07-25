@@ -234,6 +234,10 @@ main section.services .carousel .swiper-container .swiper-slide .column p {
   line-height: 3vh;
 }
 
+main section.services .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #065823;
+}
+
 main section.services .what-we-do {
   text-align: center;
   padding: 50px 20px;
@@ -438,7 +442,16 @@ main section.works h1.title {
 }
 
 main section.works .carousel {
-  padding: 50px;
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main section.works .carousel .swiper-container {
@@ -456,6 +469,10 @@ main section.works .carousel .swiper-container .swiper-slide {
 main section.works .carousel .swiper-container .swiper-slide img {
   display: block;
   width: 100%;
+}
+
+main section.works .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #065823;
 }
 
 main section.agency {
@@ -677,6 +694,16 @@ main section.testimonials p {
 
 main section.testimonials .testifiers .carousel {
   padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container {
@@ -1203,9 +1230,13 @@ footer .container .row .column ul li a:hover {
   }
   main section.services .carousel {
     display: unset;
-    padding: 50px 0;
+    padding: 0px 0;
     -webkit-transform: translateY(-100px);
             transform: translateY(-100px);
+  }
+  main section.services .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-left,
+  main section.services .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-right {
+    background-image: none;
   }
   main section.target .target-text .business-analysis {
     -ms-grid-columns: 1fr;
@@ -1228,7 +1259,7 @@ footer .container .row .column ul li a:hover {
     bottom: 10px;
   }
   main section.works .carousel {
-    padding: 50px 0;
+    padding: 0;
   }
   main section.agency {
     padding: 30px;
@@ -1288,6 +1319,9 @@ footer .container .row .column ul li a:hover {
   }
   main section.testimonials {
     padding: 30px;
+  }
+  main section.testimonials .testifiers .carousel {
+    padding: 0;
   }
 }
 

@@ -185,6 +185,11 @@ main {
             }
           }
         }
+        .swiper-pagination {
+          .swiper-pagination-bullet-active {
+            background: $main-green;
+          }
+        }
       }
     }
     .what-we-do {
@@ -345,7 +350,10 @@ main {
       display: inline-block;
     }
     .carousel {
-      padding: 50px;
+      padding: 0 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .swiper-container {
         width: 100%;
         padding: 50px 0;
@@ -357,6 +365,11 @@ main {
           img {
             display: block;
             width: 100%;
+          }
+        }
+        .swiper-pagination {
+          .swiper-pagination-bullet-active {
+            background: $main-green;
           }
         }
       }
@@ -518,6 +531,10 @@ main {
     .testifiers {
       .carousel {
         padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
         .swiper-container {
           width: 100%;
           height: 100%;
@@ -966,8 +983,14 @@ footer {
       }
       .carousel {
         display: unset;
-        padding: 50px 0;
+        padding: 0px 0;
         transform: translateY(-100px);
+        .swiper-container{
+          &.swiper-container-3d .swiper-slide-shadow-left,
+          &.swiper-container-3d .swiper-slide-shadow-right {
+            background-image: none;
+          }
+        }
       }
     }
     section.target {
@@ -994,7 +1017,7 @@ footer {
     }
     section.works {
       .carousel {
-        padding: 50px 0;
+        padding: 0;
       }
     }
     section.agency {
@@ -1040,6 +1063,11 @@ footer {
     }
     section.testimonials {
       padding: 30px;
+      .testifiers {
+        .carousel{
+          padding: 0;
+        }
+      }
     }
   }
 }
