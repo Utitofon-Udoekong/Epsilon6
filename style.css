@@ -862,7 +862,7 @@ main section.contact .container button a {
 }
 
 footer {
-  background: #071f07;
+  background: #030e03;
   width: 100%;
 }
 
@@ -886,7 +886,6 @@ footer .container .row {
 
 footer .container .row .column {
   color: #fff;
-  border: 1px solid red;
   margin-right: 60px;
 }
 
@@ -895,10 +894,11 @@ footer .container .row .column:not(:first-child) {
   margin: 0 15px;
 }
 
-footer .container .row .column .logo hr {
-  width: 50px;
+footer .container .row .column:first-child hr {
+  width: 90px;
   height: 3px;
   background: green;
+  border: none;
   margin: 20px 0;
 }
 
@@ -914,6 +914,12 @@ footer .container .row .column ul li a {
   color: #bbb;
   font-size: var(--tiny-font);
   text-decoration: none;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+footer .container .row .column ul li a:hover {
+  color: #065823;
 }
 
 .cursor {

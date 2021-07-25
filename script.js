@@ -23,7 +23,7 @@ hamburger.addEventListener("click", () => {
 // })
 
 var swiper = new Swiper(".mySwiper", {
-    effect: 'coverflow',
+    // effect: 'coverflow',
     grabCursor: 'true',
     slidesPerView: auto,
     // centeredSlides: true,

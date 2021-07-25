@@ -659,7 +659,7 @@ main {
   }
 }
 footer {
-  background: rgb(7, 31, 7);
+  background: rgb(3, 14, 3);
   width: 100%;
   .container{
     width: 100%;
@@ -671,24 +671,18 @@ footer {
       align-items: flex-start;
       .column{
         color: $main-white;
-        border: 1px solid red;
         margin-right: 60px;
         &:not(:first-child){
           width: 200px;
           margin: 0 15px;
         }
-        .logo{
-          img{
-
-          }
+        &:first-child{
           hr {
-            width: 50px;
+            width: 90px;
             height: 3px;
             background: green;
+            border: none;
             margin: 20px 0;
-          }
-          p{
-            // padding-top: 10px;
           }
         }
         ul {
@@ -704,6 +698,10 @@ footer {
               color: #bbb;
               font-size: var(--tiny-font);
               text-decoration: none;
+              transition: color .3s;
+              &:hover{
+                color: $main-green;
+              }
             }
           }
         }
