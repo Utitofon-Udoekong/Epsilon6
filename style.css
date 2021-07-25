@@ -913,6 +913,7 @@ main section.contact .container button a {
 footer {
   background: #030e03;
   width: 100%;
+  padding-bottom: 90px;
 }
 
 footer .container {
@@ -945,10 +946,10 @@ footer .container .row .column:not(:first-child) {
 
 footer .container .row .column:first-child hr {
   width: 90px;
-  height: 3px;
+  height: 2.2px;
   background: green;
   border: none;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 footer .container .row .column ul li {
@@ -969,6 +970,21 @@ footer .container .row .column ul li a {
 
 footer .container .row .column ul li a:hover {
   color: #065823;
+}
+
+footer .container hr {
+  width: 90%;
+  margin: 0 auto;
+  height: 1.5px;
+  background: #999;
+  border: none;
+}
+
+footer .container P {
+  padding-top: 30px;
+  padding-left: 100px;
+  color: #eee;
+  font-size: var(--tiny-font);
 }
 
 .cursor {

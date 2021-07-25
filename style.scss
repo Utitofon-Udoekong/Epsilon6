@@ -695,6 +695,7 @@ main {
 footer {
   background: rgb(3, 14, 3);
   width: 100%;
+  padding-bottom: 90px;
   .container {
     width: 100%;
     height: 100%;
@@ -713,10 +714,10 @@ footer {
         &:first-child {
           hr {
             width: 90px;
-            height: 3px;
+            height: 2.2px;
             background: green;
             border: none;
-            margin: 20px 0;
+            margin: 10px 0;
           }
         }
         ul {
@@ -740,6 +741,19 @@ footer {
         }
       }
     }
+    hr {
+      width: 90%;
+      margin: 0 auto;
+      height: 1.5px;
+      background: #999;
+      border: none;
+    }
+    P{
+       padding-top: 30px;
+       padding-left: 100px;
+       color: #eee;
+       font-size: var(--tiny-font);
+     }
   }
 }
 
