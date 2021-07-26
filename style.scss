@@ -549,7 +549,7 @@ main {
           .swiper-slide {
             background-position: center;
             background-size: cover;
-            width: 320px;
+            width: 290px;
             background: #b5f8bec5;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             filter: blur(4px);
@@ -562,19 +562,19 @@ main {
             .testimonial-box {
               position: relative;
               width: 100%;
-              padding: 40px;
+              padding: 30px;
               padding-top: 90px;
               color: #191919;
               .quote {
                 position: absolute;
                 top: 20px;
-                right: 30px;
+                right: 20px;
                 opacity: 0.2;
-                width: 100px;
+                width: 80px;
               }
               .content {
                 p {
-                  font-size: var(--text-font);
+                  font-size:var(--small-font);
                   color: #191919;
                 }
                 .details {
@@ -583,8 +583,8 @@ main {
                   margin-top: 20px;
                   .img-box {
                     position: relative;
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
                     border-radius: 50%;
                     overflow: hidden;
                     margin-right: 10px;
@@ -645,7 +645,7 @@ main {
       }
       hr {
         height: 80px;
-        width: 3px;
+        width: 2.6px;
         background: $main-green;
         position: absolute;
         bottom: 0;

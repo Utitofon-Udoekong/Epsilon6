@@ -726,7 +726,7 @@ main section.testimonials .testifiers .carousel .swiper-container {
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 320px;
+  width: 290px;
   background: #b5f8bec5;
   -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
           box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
@@ -746,7 +746,7 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide.
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box {
   position: relative;
   width: 100%;
-  padding: 40px;
+  padding: 30px;
   padding-top: 90px;
   color: #191919;
 }
@@ -754,13 +754,13 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .quote {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 20px;
   opacity: 0.2;
-  width: 100px;
+  width: 80px;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .content p {
-  font-size: var(--text-font);
+  font-size: var(--small-font);
   color: #191919;
 }
 
@@ -776,8 +776,8 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .content .details .img-box {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 10px;
@@ -848,7 +848,7 @@ main section.testimonials .testifiers .row .column img {
 
 main section.testimonials .testifiers hr {
   height: 80px;
-  width: 3px;
+  width: 2.6px;
   background: #065823;
   position: absolute;
   bottom: 0;
