@@ -473,13 +473,15 @@ main section.works .carousel .swiper-container {
 main section.works .carousel .swiper-container .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
 }
 
 main section.works .carousel .swiper-container .swiper-slide img {
   display: block;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main section.works .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
@@ -966,16 +968,21 @@ footer .container .row .column ul li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-footer .container .row .column ul li a {
+footer .container .row .column ul li a, footer .container .row .column ul li p {
   color: #bbb;
   font-size: var(--tiny-font);
   text-decoration: none;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  padding: 0;
 }
 
-footer .container .row .column ul li a:hover {
+footer .container .row .column ul li a:hover, footer .container .row .column ul li p:hover {
   color: #065823;
+}
+
+footer .container .row .column ul li p:hover {
+  color: #bbb;
 }
 
 footer .container hr {
@@ -1090,7 +1097,7 @@ footer .container P {
     width: 100%;
     text-align: center;
     line-height: 0;
-    margin: 30px 0;
+    margin: 50px 0;
     padding: 0;
   }
   header .clip nav .nav-wrapper ul li:nth-child(1) a {

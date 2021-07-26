@@ -367,11 +367,12 @@ main {
         .swiper-slide {
           background-position: center;
           background-size: cover;
-          width: 300px;
-          height: 300px;
+          width: 290px;
+          height: 290px;
           img {
             display: block;
             width: 100%;
+            object-fit: cover;
           }
         }
         .swiper-pagination {
@@ -732,13 +733,19 @@ footer {
             }
             b {
             }
-            a {
+            a, p {
               color: #bbb;
               font-size: var(--tiny-font);
               text-decoration: none;
               transition: color 0.3s;
+              padding: 0;
               &:hover {
                 color: $main-green;
+              }
+            }
+            p{
+              &:hover{
+                color: #bbb;
               }
             }
           }
@@ -820,7 +827,7 @@ footer {
               width: 100%;
               text-align: center;
               line-height: 0;
-              margin: 30px 0;
+              margin: 50px 0;
               padding: 0;
               &:nth-child(1) a {
                 transition-delay: 0.3s;
