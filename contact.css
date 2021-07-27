@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("./assets/black-logo.png"), linear-gradient(314deg, #03220473, #35960871);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form form {
+  width: 500px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
+.form form .logo {
+  margin-bottom: 20px;
+}
+
+.form form .logo img {
+  cursor: pointer;
+}
+
+.form form .form-group {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.678);
+}
+
+.form form .form-group label {
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-transform: translate(30px, 15px);
+          transform: translate(30px, 15px);
+  font-size: 15px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.form form .form-group input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding-left: 30px;
+}
+
+.form form .form-group input:focus ~ label,
+.form form .form-group input:valid ~ label {
+  -webkit-transform: translate(0px, -15px);
+          transform: translate(0px, -15px);
+  font-size: 12px;
+}
+
+.form form .textarea-group {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.562);
+}
+
+.form form .textarea-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(30px, 30px);
+          transform: translate(30px, 30px);
+  font-size: 15px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.form form .textarea-group textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  resize: none;
+}
+
+.form form .textarea-group textarea:focus ~ label,
+.form form .textarea-group textarea:valid ~ label {
+  -webkit-transform: translate(0px, -15px);
+          transform: translate(0px, -15px);
+  font-size: 12px;
+}
+
+.form form .submit-button {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form form .submit-button input[type="submit"] {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .form form {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form form {
+    width: 300px;
+    padding: 20px;
+  }
+  .form form .form-group label {
+    -webkit-transform: translate(15px, 15px);
+            transform: translate(15px, 15px);
+    font-size: 14px;
+  }
+  .form form .form-group input {
+    padding-left: 15px;
+  }
+  .form form .textarea-group {
+    padding: 15px;
+  }
+  .form form .textarea-group label {
+    -webkit-transform: translate(15px, 15px);
+            transform: translate(15px, 15px);
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=contact.css.map */
