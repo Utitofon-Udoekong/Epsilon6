@@ -129,16 +129,15 @@
 }
 
 .modal.active {
-  display: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .modal {
   top: 0;
   left: 0;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -151,6 +150,8 @@
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   display: none;
+  -webkit-transition: display .15s;
+  transition: display .15s;
 }
 
 .modal .dialog {
