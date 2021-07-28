@@ -18,7 +18,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("./assets/black-logo.png"), linear-gradient(314deg, #03220473, #35960871);
+  background-image: url("./assets/black-logo.png"), linear-gradient(314deg, #62776373, #b9dfa871);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -33,10 +33,12 @@
 
 .form form .logo {
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.form form .logo img {
-  cursor: pointer;
+.form form .logo span.back {
+  color: #fff;
+  font-size: 40px;
 }
 
 .form form .form-group {
@@ -176,6 +178,87 @@
 
 .modal .dialog p {
   font-size: 1em;
+}
+
+.spinner-1.active {
+  display: unset;
+}
+
+.spinner-1.active ~ .form {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+}
+
+.spinner-1 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+}
+
+.spinner-1::before {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  color: #212221;
+  -webkit-box-shadow: inset -5px 0 0 5px currentColor;
+          box-shadow: inset -5px 0 0 5px currentColor;
+  clip: rect(0, 100px, 50px, 0);
+  -webkit-animation: rotate 1s infinite linear;
+          animation: rotate 1s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-box-shadow: inset -5px 0 0 5px currentColor;
+            box-shadow: inset -5px 0 0 5px currentColor;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-box-shadow: inset -1px 0 0 1px currentColor;
+            box-shadow: inset -1px 0 0 1px currentColor;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-box-shadow: inset -5px 0 0 5px currentColor;
+            box-shadow: inset -5px 0 0 5px currentColor;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-box-shadow: inset -5px 0 0 5px currentColor;
+            box-shadow: inset -5px 0 0 5px currentColor;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-box-shadow: inset -1px 0 0 1px currentColor;
+            box-shadow: inset -1px 0 0 1px currentColor;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-box-shadow: inset -5px 0 0 5px currentColor;
+            box-shadow: inset -5px 0 0 5px currentColor;
+  }
 }
 
 @media screen and (max-width: 500px) {
