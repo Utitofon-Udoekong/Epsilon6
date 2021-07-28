@@ -1405,7 +1405,7 @@ footer .container P {
   }
   main section.services .carousel {
     display: unset;
-    padding: 0px 0;
+    padding: 0;
     -webkit-transform: translateY(-100px);
             transform: translateY(-100px);
   }
@@ -1418,7 +1418,7 @@ footer .container P {
   }
   main section.web-services .carousel {
     display: unset;
-    padding: 0px 0;
+    padding: 0 20px;
   }
   main section.web-services .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-left,
   main section.web-services .carousel .swiper-container.swiper-container-3d .swiper-slide-shadow-right {

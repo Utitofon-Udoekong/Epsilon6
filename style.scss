@@ -1122,7 +1122,7 @@ footer {
       }
       .carousel {
         display: unset;
-        padding: 0px 0;
+        padding: 0;
         transform: translateY(-100px);
         .swiper-container {
           &.swiper-container-3d .swiper-slide-shadow-left,
@@ -1138,7 +1138,7 @@ footer {
       }
       .carousel {
         display: unset;
-        padding: 0px 0;
+        padding: 0 20px;
         .swiper-container {
           &.swiper-container-3d .swiper-slide-shadow-left,
           &.swiper-container-3d .swiper-slide-shadow-right {
