@@ -1396,7 +1396,9 @@ footer .container P {
   }
   main section.services img.spiral {
     top: -400px;
-    right: -30px;
+    right: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   main section.services .intro-columns {
     display: none;
