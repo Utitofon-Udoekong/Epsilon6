@@ -427,7 +427,7 @@ main {
         }
         .swiper-pagination {
           .swiper-pagination-bullet-active {
-            background: $main-green;
+            background: $main-white;
           }
         }
       }
@@ -698,7 +698,7 @@ main {
                     line-height: 1.1em;
                     span {
                       font-size: 12px;
-                      color: #666;
+                      color: $main-white;
                     }
                   }
                 }

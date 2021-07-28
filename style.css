@@ -540,7 +540,7 @@ main section.web-services .carousel .swiper-container .swiper-slide .column .ima
 }
 
 main section.web-services .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
-  background: #065823;
+  background: #fff;
 }
 
 main section.works {
@@ -913,7 +913,7 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .content .details h2 span {
   font-size: 12px;
-  color: #666;
+  color: #fff;
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
