@@ -241,8 +241,8 @@ main section.services .carousel .swiper-container .swiper-slide {
   height: 300px;
   margin: 0 30px;
   background: #dfece183;
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  -webkit-filter: blur(1.2px);
+          filter: blur(1.2px);
   border-radius: 10px;
   -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
@@ -501,8 +501,8 @@ main section.web-services .carousel .swiper-container .swiper-slide {
   width: 250px;
   height: 300px;
   background: rgba(6, 88, 35, 0.714);
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  -webkit-filter: blur(1.2px);
+          filter: blur(1.2px);
   border-radius: 10px;
   -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
