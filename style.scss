@@ -34,14 +34,36 @@ header {
       position: absolute;
       height: 100%;
       width: 100%;
-      background: rgba(0, 0, 0, 0.733);
-      background-image: url("./assets/earth-2.jpg");
-      background-size: cover;
-      background-position: top;
-      background-blend-mode: overlay;
-      background-repeat: no-repeat;
-      clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+      background: rgb(0, 0, 0);
+      // background-image: url("./assets/earth-2.svg");
+      // background-size: cover;
+      // background-position: top;
+      // background-blend-mode: overlay;
+      // background-repeat: no-repeat;
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
       z-index: -1;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 61.7%, 0 100%);
+      z-index: -2;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $main-green;
+      clip-path: polygon(0 0, 100% 0, 100% 67%, 0 100%);
+      z-index: -3;
     }
     nav {
       width: 100%;
@@ -117,6 +139,17 @@ header {
 main {
   section.services {
     height: $full-height;
+    position: relative;
+    img.spiral {
+      position: absolute;
+      top: -400px;
+      right: 50px;
+      transform-origin: center;
+      transform: rotate(42deg);
+      transform: scale(1.2);
+      opacity: 0.15;
+      z-index: -4;
+    }
     .intro-columns {
       width: 100%;
       height: 300px;
@@ -291,53 +324,111 @@ main {
   }
   section.web-services {
     margin: 100px 0;
+    height: 100%;
     width: 100%;
-    height: 250px;
-    display: flex;
-    background: $main-green;
-    .column {
+    .service-columns{
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: space-evenly;
+      .column {
+        background: $main-green;
+        width: 250px;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        transition: 0.3s;
+        color: $main-white;
+        padding: 0 5px;
+        border-radius: 15px;
+        &:hover {
+          background: $main-white;
+          color: #000;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2),  -5px 0 10px rgba(255, 255, 255, 0.3);
+        }
+        &:hover .cls-1 {
+          fill: #000;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 1.7px;
+          background: $main-white;
+          transform: scale(0.8);
+          transform-origin: center;
+        }
+        &:hover::before {
+          background: #000;
+        }
+        p {
+          font-size: 14px;
+          line-height: 3vh;
+          padding-bottom: 20px;
+        }
+        h1 {
+          font-size: var(--text-font);
+          padding-bottom: 20px;
+        }
+        .image {
+          svg {
+            width: 80px;
+            height: 80px;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+    .carousel {
+      padding: 100px 200px;
+      display: none;
       width: 100%;
       height: 100%;
-      text-align: center;
-      position: relative;
-      transition: 0.3s;
-      color: $main-white;
-      &:hover {
-        background: $main-white;
-        color: #000;
-      }
-      &:hover .cls-1 {
-        fill: #000;
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
+      .swiper-container {
         width: 100%;
-        height: 1.7px;
-        background: $main-white;
-        transform: scale(0.8);
-        transform-origin: center;
-      }
-      &:hover::before {
-        background: #000;
-      }
-      p {
-        font-size: var(--tiny-font);
-        line-height: 3vh;
-        padding-bottom: 20px;
-      }
-      h1 {
-        font-size: var(--text-font);
-        padding-bottom: 20px;
-      }
-      .image {
-        svg {
-          width: 80px;
-          height: 80px;
-          margin-top: 30px;
+        height: 100%;
+        .swiper-slide {
+          width: 250px;
+          height: 300px;
+          background: transparentize($color: $main-green, $amount: 0.286);
+          filter: blur(4px);
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.02),
+          0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
+          transition: background .3s;
+          &.swiper-slide-active {
+            filter: blur(0);
+            background: $main-green;
+          }
+          .column {
+            height: 100%;
+            width: 100%;
+            padding: 27px;
+            text-align: center;
+            p {
+              font-size: 14px;
+              padding-bottom: 20px;
+            }
+            h1 {
+              font-size: var(--text-font);
+              padding-bottom: 20px;
+            }
+            .image {
+              svg {
+                width: 80px;
+                height: 80px;
+                margin: 30px 0;
+              }
+            }
+          }
+        }
+        .swiper-pagination {
+          .swiper-pagination-bullet-active {
+            background: $main-green;
+          }
         }
       }
     }
@@ -347,13 +438,14 @@ main {
     width: 100%;
     height: 100%;
     text-align: center;
-    // padding: 100px;
+    background: rgb(243, 243, 243);
     h1.title {
       font-size: var(--title-font);
       color: $main-green;
       font-weight: 800;
       border-bottom: 2px solid $main-green;
       display: inline-block;
+      padding-top: 50px;
     }
     .carousel {
       padding: 0 50px;
@@ -386,6 +478,7 @@ main {
     width: 100%;
     height: 100%;
     padding: 100px;
+    background: rgb(243, 243, 243);
     .title {
       display: flex;
       align-items: center;
@@ -550,21 +643,21 @@ main {
             background-position: center;
             background-size: cover;
             width: 290px;
-            background: #dfece183;
+            background: #19191949;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             filter: blur(4px);
             border-radius: 10px;
             transition: background .3s;
             &.swiper-slide-active {
               filter: blur(0);
-              background: $main-white;
+              background: #191919;
             }
             .testimonial-box {
               position: relative;
               width: 100%;
               padding: 30px;
               padding-top: 90px;
-              color: #191919;
+              color: $main-white;
               .quote {
                 position: absolute;
                 top: 20px;
@@ -575,7 +668,7 @@ main {
               .content {
                 p {
                   font-size:var(--small-font);
-                  color: #191919;
+                  color: $main-white;
                 }
                 .details {
                   display: flex;
@@ -601,7 +694,7 @@ main {
                     font-size: 16px;
                     font-weight: 400;
                     letter-spacing: 1px;
-                    color: #1a1717;
+                    color: $main-white;
                     line-height: 1.1em;
                     span {
                       font-size: 12px;
@@ -663,7 +756,7 @@ main {
       background: transparentize($color: rgb(1, 15, 6), $amount: 0.1);
       color: $main-white;
       flex-direction: column;
-      background-image: url("assets/office.jpg");
+      background-image: url("assets/office.svg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -1022,6 +1115,10 @@ footer {
   }
   main {
     section.services {
+      img.spiral {
+        top: -400px;
+        right: -30px;
+      }
       .intro-columns {
         display: none;
       }
@@ -1029,6 +1126,21 @@ footer {
         display: unset;
         padding: 0px 0;
         transform: translateY(-100px);
+        .swiper-container {
+          &.swiper-container-3d .swiper-slide-shadow-left,
+          &.swiper-container-3d .swiper-slide-shadow-right {
+            background-image: none;
+          }
+        }
+      }
+    }
+    section.web-services {
+      .service-columns {
+        display: none;
+      }
+      .carousel {
+        display: unset;
+        padding: 0px 0;
         .swiper-container {
           &.swiper-container-3d .swiper-slide-shadow-left,
           &.swiper-container-3d .swiper-slide-shadow-right {
@@ -1046,16 +1158,6 @@ footer {
       .target-image {
         img {
           max-width: 350px;
-        }
-      }
-    }
-    section.web-services {
-      flex-direction: column;
-      height: 100%;
-      .column {
-        padding: 10px 40px;
-        &::before {
-          bottom: 10px;
         }
       }
     }
