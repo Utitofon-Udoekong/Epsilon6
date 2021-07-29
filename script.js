@@ -40,3 +40,9 @@ var swiper = new Swiper(".mySwiper", {
     },
     loop: true
   });
+
+  const str = "adam"
+  const rts = window.btoa(str);
+  const evev = window.atob(rts)
+  console.log(rts)
+  console.log(evev)
