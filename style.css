@@ -50,7 +50,7 @@ header .clip .clip-path {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.664);
-  background-image: url("./assets/earth-2.jpg");
+  background-image: url("./assets/earth-3.jpg");
   background-size: cover;
   background-position: top;
   background-blend-mode: overlay;
@@ -1051,7 +1051,7 @@ main section.contact .container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("assets/office.svg");
+  background-image: url("assets/customer-care.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1501,6 +1501,10 @@ footer .container P {
   main section.works .carousel {
     padding: 0;
   }
+  main section.works .carousel .swiper-slide {
+    width: 380px !important;
+    height: 280px !important;
+  }
   main section.agency {
     padding: 30px;
   }
@@ -1597,6 +1601,10 @@ footer .container P {
   }
   main section.target .target-image img {
     max-width: 300px;
+  }
+  main section.works .carousel .swiper-slide {
+    width: 300px !important;
+    height: 200px !important;
   }
   main section.testimonials {
     padding: 30px;
