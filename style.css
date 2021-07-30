@@ -1453,6 +1453,7 @@ footer .container P {
   }
   header .clip .landing {
     padding: 50px 20px;
+    padding-top: 80px;
   }
   header .clip .landing h1 {
     font-size: var(--heading-font);
