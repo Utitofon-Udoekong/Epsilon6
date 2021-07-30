@@ -30,8 +30,8 @@ var swiper = new Swiper(".mySwiper", {
     coverflowEffect: {
       rotate: 0,
       stretch: 50,
-      depth: 70,
-      modifier: 1,
+      depth: 100,
+      modifier: 1.5,
       slideShadows: true,
     },
     pagination: {
