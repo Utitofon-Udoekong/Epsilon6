@@ -205,13 +205,11 @@ main {
           height: 300px;
           margin: 0 30px;
           background: #dfece183;
-          filter: blur(1.2px);
           border-radius: 10px;
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02),
             0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
             transition: background .3s;
           &.swiper-slide-active {
-            filter: blur(0);
             background: $main-white;
           }
           .column {
@@ -405,13 +403,11 @@ main {
           width: 250px;
           height: 300px;
           background: transparentize($color: $main-green, $amount: 0.286);
-          filter: blur(1.2px);
           border-radius: 10px;
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02),
           0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
           transition: background .3s;
           &.swiper-slide-active {
-            filter: blur(0);
             background: $main-green;
           }
           .column {
@@ -474,33 +470,48 @@ main {
           width: 400px;
           height: 300px;
           position: relative;
+          overflow: hidden;
           img {
             display: block;
             width: 100%;
             height: 100%;
           }
+          &:hover::before{
+            top: 0;
+          }
+          &::before{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparentize($color: #07461d, $amount: 0.2);
+            transition: .3s;
+            z-index: 1;
+          }
           &:hover .content{
-            display: flex;
-            opacity: 1;
+            top: 0;
           }
           .content{
             position: absolute;
-            top: 0;
+            top: 100%;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.897);
-            display: none;
-            opacity: 0;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            place-items: center;
+            z-index: 2;
+            transition: .2s;
+            transition-delay: .3s;
             a{
               i{
                 font-size: var(--title-font);
                 color: $main-white;
                 margin: 0 20px;
                 opacity: .4;
-                transition: opacity .4s;
+                transition: opacity .3s;
               }
               &:hover i{
                 opacity: 1;
@@ -687,11 +698,9 @@ main {
             width: 290px;
             background: #19191949;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-            // filter: blur(1.2px);
             border-radius: 10px;
             transition: background .3s;
             &.swiper-slide-active {
-              filter: blur(0);
               background: #191919;
             }
             .testimonial-box {
@@ -710,7 +719,7 @@ main {
               .content {
                 text-align: center;
                 p {
-                  font-size: calc(var(--small-font) - 5px);
+                  font-size: var(--small-font);
                   color: $main-white;
                 }
                 img {
@@ -1142,6 +1151,14 @@ footer {
     .clip {
       nav {
         padding: 0 20px;
+        .logo{
+          width: 130px;
+          a{
+            img{
+              width: 100%;
+            }
+          }
+        }
         .nav-btn {
           top: 20px;
         }
@@ -1264,6 +1281,11 @@ footer {
       .testifiers {
         .carousel {
           padding: 0;
+          .swiper-container{
+            .swiper-slide{
+              width: 100%;
+            }
+          }
         }
         hr {
           height: 40px;

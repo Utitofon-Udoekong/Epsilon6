@@ -261,8 +261,6 @@ main section.services .carousel .swiper-container .swiper-slide {
   height: 300px;
   margin: 0 30px;
   background: #dfece183;
-  -webkit-filter: blur(1.2px);
-          filter: blur(1.2px);
   border-radius: 10px;
   -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
@@ -271,8 +269,6 @@ main section.services .carousel .swiper-container .swiper-slide {
 }
 
 main section.services .carousel .swiper-container .swiper-slide.swiper-slide-active {
-  -webkit-filter: blur(0);
-          filter: blur(0);
   background: #fff;
 }
 
@@ -521,8 +517,6 @@ main section.web-services .carousel .swiper-container .swiper-slide {
   width: 250px;
   height: 300px;
   background: rgba(6, 88, 35, 0.714);
-  -webkit-filter: blur(1.2px);
-          filter: blur(1.2px);
   border-radius: 10px;
   -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 20px rgba(0, 0, 0, 0.192), 0 0 10px rgba(255, 255, 255, 0.02);
@@ -531,8 +525,6 @@ main section.web-services .carousel .swiper-container .swiper-slide {
 }
 
 main section.web-services .carousel .swiper-container .swiper-slide.swiper-slide-active {
-  -webkit-filter: blur(0);
-          filter: blur(0);
   background: #065823;
 }
 
@@ -605,6 +597,7 @@ main section.works .carousel .swiper-container .swiper-slide {
   width: 400px;
   height: 300px;
   position: relative;
+  overflow: hidden;
 }
 
 main section.works .carousel .swiper-container .swiper-slide img {
@@ -613,28 +606,42 @@ main section.works .carousel .swiper-container .swiper-slide img {
   height: 100%;
 }
 
+main section.works .carousel .swiper-container .swiper-slide:hover::before {
+  top: 0;
+}
+
+main section.works .carousel .swiper-container .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 70, 29, 0.8);
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+}
+
 main section.works .carousel .swiper-container .swiper-slide:hover .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 1;
+  top: 0;
 }
 
 main section.works .carousel .swiper-container .swiper-slide .content {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.897);
-  display: none;
-  opacity: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
 }
 
 main section.works .carousel .swiper-container .swiper-slide .content a i {
@@ -642,8 +649,8 @@ main section.works .carousel .swiper-container .swiper-slide .content a i {
   color: #fff;
   margin: 0 20px;
   opacity: .4;
-  -webkit-transition: opacity .4s;
-  transition: opacity .4s;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 main section.works .carousel .swiper-container .swiper-slide .content a:hover i {
@@ -905,8 +912,6 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide.swiper-slide-active {
-  -webkit-filter: blur(0);
-          filter: blur(0);
   background: #191919;
 }
 
@@ -931,7 +936,7 @@ main section.testimonials .testifiers .carousel .swiper-container .swiper-slide 
 }
 
 main section.testimonials .testifiers .carousel .swiper-container .swiper-slide .testimonial-box .content p {
-  font-size: calc(var(--small-font) - 5px);
+  font-size: var(--small-font);
   color: #fff;
 }
 
@@ -1448,6 +1453,12 @@ footer .container P {
   header .clip nav {
     padding: 0 20px;
   }
+  header .clip nav .logo {
+    width: 130px;
+  }
+  header .clip nav .logo a img {
+    width: 100%;
+  }
   header .clip nav .nav-btn {
     top: 20px;
   }
@@ -1498,6 +1509,9 @@ footer .container P {
   }
   main section.target .target-image img {
     max-width: 350px;
+  }
+  main section.works {
+    margin-bottom: 50px;
   }
   main section.works .carousel {
     padding: 0;
@@ -1567,6 +1581,9 @@ footer .container P {
   }
   main section.testimonials .testifiers .carousel {
     padding: 0;
+  }
+  main section.testimonials .testifiers .carousel .swiper-container .swiper-slide {
+    width: 100%;
   }
   main section.testimonials .testifiers hr {
     height: 40px;
